@@ -21,7 +21,7 @@ Enhance your development workflow with OpenAI Code Review. Start receiving intel
 - [Azure DevOps Account](https://dev.azure.com/)
 - OpenAI API Key
 
-## Getting starrted
+## Getting started
 
 1. Install the OpenAI Code Review DevOps Extension from the [Azure DevOps Marketplace](https://marketplace.visualstudio.com/azuredevops).
 2. Add OpenAI Code Review Task to Your Pipeline:
