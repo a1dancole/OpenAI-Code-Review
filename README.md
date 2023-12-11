@@ -53,7 +53,7 @@ Enhance your development workflow with OpenAI Code Review. Start receiving intel
          file_excludes: 'file1.js,file2.py,secret.txt'
          additional_prompts: 'Fix variable naming, Ensure consistent indentation, Review error handling approach'`
    
-3. Setup [Build validation](https://learn.microsoft.com/en-us/azure/devops/repos/git/branch-policies?view=azure-devops&tabs=browser#build-validation) for a branch policy to trigger the code review when a Pull Request is created
+3. If you do not already have Build Validation configured for your branch already add [Build validation](https://learn.microsoft.com/en-us/azure/devops/repos/git/branch-policies?view=azure-devops&tabs=browser#build-validation) to your branch policy to trigger the code review when a Pull Request is created
 
 ## FAQ
 
