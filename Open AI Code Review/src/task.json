@@ -1,0 +1,101 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "abd1f390-3d55-4eb2-af0a-273c5dbf256f",
+    "name": "OpenAICodeReview",
+    "friendlyName": "Open AI Code Review",
+    "description": "Complete a Code Review using Open AI",
+    "category": "Utility",
+    "author": "Aidan Cole",
+    "version": {
+        "Major": 1,
+        "Minor": 0,
+        "Patch": 0
+    },
+    "instanceNameFormat": "Open AI Code Review $(message)",
+    "inputs": [
+        {
+            "name": "api_key",
+            "type": "string",
+            "label": "Open AI API Key",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "API Key for Open AI API. "
+        },
+        {
+            "name": "ai_model",
+            "type": "pickList",
+            "label": "Open AI API Model",
+            "defaultValue": "gpt-3.5-turbo",
+            "options": {
+                "gpt-4-1106-preview": "gpt-4-1106-preview",
+                "gpt-4-vision-preview": "gpt-4-vision-preview",
+                "gpt-4": "gpt-4",
+                "gpt-4-0314": "gpt-4-0314",
+                "gpt-4-0613": "gpt-4-0613",
+                "gpt-4-32k": "gpt-4-32k",
+                "gpt-4-32k-0314": "gpt-4-32k-0314",
+                "gpt-4-32k-0613": "gpt-4-32k-0613",
+                "gpt-3.5-turbo-1106": "gpt-3.5-turbo-1106",
+                "gpt-3.5-turbo": "gpt-3.5-turbo",
+                "gpt-3.5-turbo-16k": "gpt-3.5-turbo-16k",
+                "gpt-3.5-turbo-0301": "gpt-3.5-turbo-0301",
+                "gpt-3.5-turbo-0613": "gpt-3.5-turbo-0613",
+                "gpt-3.5-turbo-16k-0613": "gpt-3.5-turbo-16k-0613"
+            },
+            "helpMarkDown": "## OpenAI API Model Configuration\n\n### Description\nChoose the Open AI API model for code analysis. The selected model determines the depth and capabilities of the code review performed by Open AI.\n\n### Options\n- **gpt-4-1106-preview:** Preview version of GPT-4 released on June 11, 202x.\n- **gpt-4-vision-preview:** Preview version of GPT-4 with enhanced vision capabilities.\n- **gpt-4:** Latest stable release of GPT-4.\n- **gpt-4-0314:** GPT-4 version released on March 14, 202x.\n- **gpt-4-0613:** GPT-4 version released on June 13, 202x.\n- **gpt-4-32k:** GPT-4 version with a 32k parameter size.\n- **gpt-4-32k-0314:** GPT-4 version with 32k parameters, released on March 14, 202x.\n- **gpt-4-32k-0613:** GPT-4 version with 32k parameters, released on June 13, 202x.\n- **gpt-3.5-turbo-1106:** Preview version of GPT-3.5 Turbo released on November 6, 202x.\n- **gpt-3.5-turbo:** Latest stable release of GPT-3.5 Turbo.\n- **gpt-3.5-turbo-16k:** GPT-3.5 Turbo version with a 16k parameter size.\n- **gpt-3.5-turbo-0301:** GPT-3.5 Turbo version released on March 1, 202x.\n- **gpt-3.5-turbo-0613:** GPT-3.5 Turbo version released on June 13, 202x.\n- **gpt-3.5-turbo-16k-0613:** GPT-3.5 Turbo version with 16k parameters, released on June 13, 202x.\n\n### Default Value\nThe default Open AI API model is set to **gpt-3.5-turbo**.\n\n Choose the model that best suits your code review requirements."
+        },
+        {
+            "name": "bugs",
+            "type": "boolean",
+            "label": "Check for bugs",
+            "defaultValue": true,
+            "helpMarkDown": "Specify whether to enable bug checking during the code review process.\n\n- Set to `true` to perform bug checks.\n- Set to `false` to skip bug checks.\n\nBug checking helps identify and address potential issues in the code. Default value is `true`."
+        },
+        {
+            "name": "performance",
+            "type": "boolean",
+            "label": "Check for performance problems",
+            "defaultValue": true,
+            "helpMarkDown": "Specify whether to include performance checks during the code review process.\n\n- Set to `true` to perform performance checks.\n- Set to `false` to skip performance checks.\n\nEnabling performance checks helps identify and address potential performance-related issues in the code. Default value is `true`."
+        },
+        {
+            "name": "best_practices",
+            "type": "boolean",
+            "label": "Check for missed best practices",
+            "defaultValue": true,
+            "helpMarkDown": "Specify whether to include checks for missed best practices during the code review process.\n\n- Set to `true` to perform best practices checks.\n- Set to `false` to skip best practices checks.\n\nEnabling best practices checks helps ensure adherence to coding standards and identifies areas for improvement. Default value is `true`."
+        },
+        {
+            "name": "file_extensions",
+            "type": "string",
+            "label": "File Extensions",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "Specify a comma-separated list of file extensions for which you want to perform a code review. This input helps narrow down the scope of the code review to specific file types.\n\n**Example:**\n```plaintext\n\"js,ts,css,html\"\n```\n\nMake sure to provide the file extensions without spaces after the commas."
+        },
+        {
+            "name": "file_excludes",
+            "type": "string",
+            "label": "Files to exclude",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "## Files to Exclude Configuration\n\n### Description\nSpecify a comma-separated list of file names that should be excluded from code reviews. This is useful for excluding sensitive files or preventing certain files from being reviewed.\n\n### Format\nProvide a list of file names separated by commas. For example: `file1.js, file2.py, secret.txt`\n\n### Default Value\nIf no files are specified, all files will be considered for code review by default."
+        },
+        {
+            "name": "additional_prompts",
+            "type": "string",
+            "label": "Additional Prompts",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "Specify additional Open AI prompts as a comma-separated list to enhance the code review process.\n\n- Add multiple prompts separated by commas.\n- These prompts will be used in conjunction with the main code review prompts.\n\n**Example:**\n```plaintext\nFix variable naming, Ensure consistent indentation, Review error handling approach\n```"
+        }
+    ],
+    "execution": {
+        "Node10": {
+            "target": "main.js"
+        },
+        "Node16": {
+            "target": "main.js"
+        }
+    }
+}

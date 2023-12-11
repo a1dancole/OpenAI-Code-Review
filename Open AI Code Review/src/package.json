@@ -1,0 +1,26 @@
+{
+  "name": "pr-gpt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@dqbd/tiktoken": "^1.0.7",
+    "azure-devops-extension-sdk": "^4.0.2",
+    "azure-pipelines-task-lib": "^4.7.0",
+    "gpt-tokenizer": "^2.1.2",
+    "openai": "^4.20.1",
+    "simple-git": "^3.21.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.10.3",
+    "@types/q": "^1.5.8",
+    "sync-request": "^6.1.0"
+  }
+}
