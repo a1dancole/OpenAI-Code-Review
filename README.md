@@ -11,7 +11,7 @@ Enhance your development workflow with OpenAI Code Review. Start receiving intel
 ## Why Choose OpenAI Code Review?
 
 - **Automated Code Reviews:** Say goodbye to manual code inspections! Let OpenAI analyze your code changes, catching bugs, performance issues, and suggesting best practices.
-- **Effortless Installation:** A simple one-click installation from the [Azure DevOps Marketplace](https://marketplace.visualstudio.com/azuredevops) gets you up and running instantly.
+- **Effortless Installation:** A simple one-click installation from the [Azure DevOps Marketplace]([https://marketplace.visualstudio.com/azuredevops](https://marketplace.visualstudio.com/items?itemName=AidanCole.oaicr)) gets you up and running instantly.
 - **AI-Powered Insights:** Leverage the latest advancements in natural language processing to receive insightful comments on your pull requests.
 - **Faster Reviews:** Reduce the time spent on code reviews. Let OpenAI handle the routine, allowing your team to focus on impactful work.
 - **Configurable and Customizable:** Tailor the extension to your needs with customizable settings. Specify the OpenAI model, define file exclusions, and more.
@@ -19,11 +19,11 @@ Enhance your development workflow with OpenAI Code Review. Start receiving intel
 ## Prerequisites
 
 - [Azure DevOps Account](https://dev.azure.com/)
-- OpenAI API Key
+- An [Open AI API Key](https://platform.openai.com/docs/overview)
 
 ## Getting started
 
-1. Install the OpenAI Code Review DevOps Extension from the [Azure DevOps Marketplace](https://marketplace.visualstudio.com/azuredevops).
+1. Install the OpenAI Code Review DevOps Extension from the [Azure DevOps Marketplace]([https://marketplace.visualstudio.com/azuredevops](https://marketplace.visualstudio.com/items?itemName=AidanCole.oaicr)).
 2. Add OpenAI Code Review Task to Your Pipeline:
 
    ```yaml
