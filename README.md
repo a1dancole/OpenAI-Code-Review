@@ -1,26 +1,30 @@
 # OpenAI Code Review DevOps Extension
 
-This DevOps extension integrates with Azure DevOps Pipelines to perform automated code reviews using OpenAI. The extension includes a task that can be added to your pipeline, triggering the code review process on Pull Requests.
+## Supercharge Your Code Reviews with OpenAI
 
-## Features
+Welcome to the OpenAI Code Review DevOps Extension – your new ally in building top-notch software! This extension seamlessly integrates OpenAI's powerful language models into your Azure DevOps pipeline, transforming code reviews into an intelligent and efficient process.
 
-- Automated Code Reviews using OpenAI
-- Diff generation for each change in a Pull Request
-- Adding OpenAI's code review comments to the Pull Request
+### Get Started Now!
+
+Enhance your development workflow with OpenAI Code Review. Start receiving intelligent and actionable insights on your code changes. Install the extension today and experience the future of code reviews!
+
+## Why Choose OpenAI Code Review?
+
+- **Automated Code Reviews:** Say goodbye to manual code inspections! Let OpenAI analyze your code changes, catching bugs, performance issues, and suggesting best practices.
+- **Effortless Installation:** A simple one-click installation from the [Azure DevOps Marketplace](https://marketplace.visualstudio.com/azuredevops) gets you up and running instantly.
+- **AI-Powered Insights:** Leverage the latest advancements in natural language processing to receive insightful comments on your pull requests.
+- **Faster Reviews:** Reduce the time spent on code reviews. Let OpenAI handle the routine, allowing your team to focus on impactful work.
+- **Configurable and Customizable:** Tailor the extension to your needs with customizable settings. Specify the OpenAI model, define file exclusions, and more.
 
 ## Prerequisites
 
 - [Azure DevOps Account](https://dev.azure.com/)
 - OpenAI API Key
 
-## Installation
+## Getting starrted
 
 1. Install the OpenAI Code Review DevOps Extension from the [Azure DevOps Marketplace](https://marketplace.visualstudio.com/azuredevops).
-
-## Usage
-
-1. **Add OpenAI Code Review Task to Your Pipeline:**
-   Add the "OpenAI Code Review" task to your pipeline YAML file.
+2. Add OpenAI Code Review Task to Your Pipeline:
 
    ```yaml
    trigger:
@@ -47,7 +51,9 @@ This DevOps extension integrates with Azure DevOps Pipelines to perform automate
          best_practices: true
          file_extensions: 'js,ts,css,html'
          file_excludes: 'file1.js,file2.py,secret.txt'
-         additional_prompts: 'Fix variable naming, Ensure consistent indentation, Review error handling approach'
+         additional_prompts: 'Fix variable naming, Ensure consistent indentation, Review error handling approach'`
+   
+3. Setup [Build validation](https://learn.microsoft.com/en-us/azure/devops/repos/git/branch-policies?view=azure-devops&tabs=browser#build-validation) for a branch policy to trigger the code review when a Pull Request is created
 
 ## FAQ
 
@@ -59,10 +65,16 @@ A: Ensure that "Allow scripts to access OAuth token" is enabled as part of the a
 
 A: Build Administrators must be given "Contribute to pull requests" access. Check [this Stack Overflow answer](https://stackoverflow.com/a/57985733) for guidance on setting up permissions.
 
-## Issues and Features
+### Bug Reports
 
-If you encounter any issues, have suggestions for improvement, or would like to request new features, please report as a [new issue](https://github.com/a1dancole/OpenAI-Code-Review/issues/new/choose).
+If you find a bug or unexpected behavior, please [open a bug report](https://github.com/a1dancole/openai-code-review/issues/new?assignees=&labels=bug&template=bug_report.md&title=).
 
-## Contributing
+### Feature Requests
+
+If you have ideas for new features or enhancements, please [submit a feature request](https://github.com/a1dancole/openai-code-review/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=).
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
 
 If you would like to contribute to the development of this extension, please follow our contribution guidelines.
