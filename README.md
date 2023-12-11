@@ -49,6 +49,16 @@ This DevOps extension integrates with Azure DevOps Pipelines to perform automate
          file_excludes: 'file1.js,file2.py,secret.txt'
          additional_prompts: 'Fix variable naming, Ensure consistent indentation, Review error handling approach'
 
+## FAQ
+
+### Q: What agent job settings are required?
+
+A: Ensure that "Allow scripts to access OAuth token" is enabled as part of the agent job. Follow the [documentation](https://learn.microsoft.com/en-us/azure/devops/pipelines/build/options?view=azure-devops#allow-scripts-to-access-the-oauth-token) for more details.
+
+### Q: What permissions are required for Build Administrators?
+
+A: Build Administrators must be given "Contribute to pull requests" access. Check [this Stack Overflow answer](https://stackoverflow.com/a/57985733) for guidance on setting up permissions.
+
 ## Issues and Features
 
 If you encounter any issues, have suggestions for improvement, or would like to request new features, please report as a [new issue](https://github.com/a1dancole/OpenAI-Code-Review/issues/new/choose).
