@@ -71,7 +71,7 @@
             "label": "File Extensions",
             "defaultValue": "",
             "required": false,
-            "helpMarkDown": "Specify a comma-separated list of file extensions for which you want to perform a code review. This input helps narrow down the scope of the code review to specific file types.\n\n**Example:**\n```plaintext\n\"js,ts,css,html\"\n```\n\nMake sure to provide the file extensions without spaces after the commas."
+            "helpMarkDown": "Specify a comma-separated list of file extensions for which you want to perform a code review. This input helps narrow down the scope of the code review to specific file types.\n\n**Example:**\n```plaintext\n\".js,.ts,.css,.html\"\n```\n\nMake sure to provide the file extensions without spaces after the commas."
         },
         {
             "name": "file_excludes",
