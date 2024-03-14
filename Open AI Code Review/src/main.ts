@@ -3,6 +3,7 @@ import { OpenAI } from 'openai';
 import { ChatGPT } from './chatgpt';
 import { Repository } from './repository';
 import { PullRequest } from './pullrequest';
+import { HttpsProxyAgent } from 'https-proxy-agent';
 
 export class Main {
     private static _chatGpt: ChatGPT;
@@ -25,7 +26,14 @@ export class Main {
         const filesToExclude = tl.getInput('file_excludes', false);
         const additionalPrompts = tl.getInput('additional_prompts', false)?.split(',')
         
-        this._chatGpt = new ChatGPT(new OpenAI({ apiKey: apiKey }), tl.getBoolInput('bugs', true), tl.getBoolInput('performance', true), tl.getBoolInput('best_practices', true), additionalPrompts);
+        let proxyUrl = tl.getVariable('Agent.ProxyUrl');
+
+        if (!proxyUrl) {
+            this._chatGpt = new ChatGPT(new OpenAI({ apiKey: apiKey }), tl.getBoolInput('bugs', true), tl.getBoolInput('performance', true), tl.getBoolInput('best_practices', true), additionalPrompts);
+        } else {
+            this._chatGpt = new ChatGPT(new OpenAI({ apiKey: apiKey, httpAgent: new HttpsProxyAgent(proxyUrl)}), tl.getBoolInput('bugs', true), tl.getBoolInput('performance', true), tl.getBoolInput('best_practices', true), additionalPrompts);
+        }
+
         this._repository = new Repository();
         this._pullRequest = new PullRequest();
 
