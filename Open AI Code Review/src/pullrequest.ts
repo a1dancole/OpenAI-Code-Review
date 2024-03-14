@@ -44,7 +44,7 @@ export class PullRequest {
             }
         }
 
-        let endpoint = `${this._collectionUri}${this._teamProjectId}/_apis/git/repositories/${this._repositoryName}/pullRequests/${this._pullRequestId}/threads?api-version=7.0`
+        let endpoint = `${this._collectionUri}${this._teamProjectId}/_apis/git/repositories/${this._repositoryName}/pullRequests/${this._pullRequestId}/threads?api-version=6.0`
 
         var response = await fetch(endpoint, {
             method: 'POST',
